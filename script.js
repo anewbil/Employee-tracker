@@ -9,6 +9,10 @@ while(addAnother){
   const employeeFirstName=prompt("Enter employee first name")
   const employeeLastName=prompt("Enter employee last name")
   const employeeSalary=parseInt(prompt("Enter salary"))
+  if (isNaN(employeeSalary)){
+    alert("Employee salary must be a VALID number")
+    return null
+  }
   const newEmployee={
     firstName: employeeFirstName,
     lastName: employeeLastName,
@@ -41,6 +45,10 @@ const displayAverageSalary = function(employeesArray) {
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
+  console.log(employeesArray,"Random Function")
+  let randomEmployee=Math.floor(Math.random() * employeesArray.length)
+  const randomDude= employeesArray[randomEmployee]
+  console.log (`This is a random employee ${randomDude.firstName},${randomDude.lastName}, he makes ${randomDude.salary} dollars`)
   // TODO: Select and display a random employee
 }
 
